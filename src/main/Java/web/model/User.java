@@ -14,12 +14,15 @@ public class User {
     private Integer id;
 
     @Column(name = "name")
+    @NotEmpty(message = "You didn't provide a name")
     private String name;
 
     @Column(name = "lastName")
+    @NotEmpty(message = "You didn't specify your last name")
     private String lastName;
 
     @Column(name = "age")
+    @Min(value = 1, message = "The age must have at least 1 digit")
     private int age;
 
     public User() {}
